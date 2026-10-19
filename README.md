@@ -60,3 +60,4 @@ features = sfp.PhysiochemicalPropertiesFingerprint(fp_size=256)
 - do we have access just to measurement at this one frequency(what even is the frequency at G''min) or to entire spectrum data?
 - how to classify additives/what properties to use as features
 - check upper and lower surfactant concentration ratio
+- check not viscoelastic mixtures which have high eta_0
