@@ -2,6 +2,15 @@
 - [RDKit](https://www.rdkit.org/)
 - [Scikit-fingerprints](https://scikit-fingerprints.readthedocs.io/stable/)
 
+## Current results
+AUC
+
+| classifier\features                 | expert_chen(surf) | expert_chen(all) | physiochemical(surf) |   |
+|-------------------------------------|-------------------|------------------|----------------------|---|
+| RandomForest(n=10, leaf=10)         | 0.8224 ± 0.0053   | 0.8330 ± 0.0069  | 0.8102 ± 0.0043      |   |
+| HistGradientBoosting(i=200, lr=0.1) | 0.8382 ± 0.0074   | 0.8542 ± 0.0094  | 0.8631 ± 0.0096      |   |
+|                                     |                   |                  |                      |   |
+
 ### Relevant feature ideas
 - chain length(maybe just no. of carbon atoms?)
 - no. of tails
