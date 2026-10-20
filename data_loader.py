@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 def load_cleaned() -> pd.DataFrame:
-    return pd.read_csv('data/viscoelastic_cleared.csv', keep_default_na=False, na_values='')
+    return pd.read_csv('data/viscoelastic_cleaned.csv', keep_default_na=False, na_values='')
 
 def drop_rheological(df: pd.DataFrame) -> pd.DataFrame:
     return df.drop(columns=[
