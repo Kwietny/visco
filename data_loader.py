@@ -16,7 +16,7 @@ def drop_rheological(df: pd.DataFrame) -> pd.DataFrame:
 def drop_ids(df: pd.DataFrame) -> pd.DataFrame:
     return df.drop(columns=[
         'id_surfactant1',
-        'id_surfactant1',
+        'id_surfactant2',
         'id_additive1',
         'id_additive2'
     ])
