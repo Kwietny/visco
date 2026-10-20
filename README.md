@@ -10,13 +10,15 @@ AUC
 | RandomForest(n=10, leaf=10)         | 0.8224 ± 0.0053   | 0.8330 ± 0.0069  | 0.8102 ± 0.0043      |                     |
 | HistGradientBoosting(i=200, lr=0.1) | 0.8382 ± 0.0074   | 0.8542 ± 0.0094  | 0.8631 ± 0.0096      | super slow          |
 | XGBoost(n=300, d=5, lr=0.05)        | 0.8460 ± 0.0056   | 0.8647 ± 0.0072  | 0.8667 ± 0.0082      | 0.8580 ± 0.0064     |
+| LightGBM(n=300, d=5, lr=0.05)       | 0.8418 ± 0.0084   | 0.8669 ± 0.0086  | 0.8683 ± 0.0088      |                     |
 
-### Relevant feature ideas
-- chain length(maybe just no. of carbon atoms?)
-- no. of tails
+### Ideas
+#### Features
 - tail structure(how to encode meaningfully?)
-- headgroup type(anionic etc.)
-- headgroup charge/size/hydrogen bonding
+- headgroup charge/size/hydrogen bonding (sklearn-fingerprint)
+#### General
+- ```from sklearn.model_selection import GridSearchCV``` for hyperparameter tuning
+- define categorical variables for algorithms that support them(XGBoost, LightGBM) instead of using OneHotEncoding
 
 ### Descriptors idea (from the paper)
 * Expert
@@ -67,6 +69,6 @@ features = sfp.PhysiochemicalPropertiesFingerprint(fp_size=256)
 #### Notes  
 - using Critical Micelle Concentration may be useful for prediction 
 - do we have access just to measurement at this one frequency(what even is the frequency at G''min) or to entire spectrum data?
-- how to classify additives/what properties to use as features
-- check upper and lower surfactant concentration ratio
+- how to classify additives/what properties to use as features (currently the same features as for surfactants)
+- check upper and lower surfactant concentration ratio (see concentration_analysis)
 - check not viscoelastic mixtures which have high eta_0
