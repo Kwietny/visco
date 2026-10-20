@@ -12,6 +12,14 @@ AUC
 | XGBoost(n=300, d=5, lr=0.05)        | 0.8460 ± 0.0056   | 0.8647 ± 0.0072  | 0.8667 ± 0.0082      | 0.8580 ± 0.0064     |
 | LightGBM(n=300, d=5, lr=0.05)       | 0.8418 ± 0.0084   | 0.8669 ± 0.0086  | 0.8683 ± 0.0088      |                     |
 
+
+## TODO
+- more features
+- more classifiers(BRR)
+- fine-tuning
+- search for full spectrum plots
+- check outliers
+
 ### Ideas
 #### Features
 - tail structure(how to encode meaningfully?)
