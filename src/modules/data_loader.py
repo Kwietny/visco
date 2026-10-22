@@ -8,6 +8,9 @@ DATA_DIR = PROJECT_DIR / "data"
 def load_cleaned() -> pd.DataFrame:
     return pd.read_csv(DATA_DIR / 'viscoelastic_cleaned.csv', keep_default_na=False, na_values='')
 
+def save_features(df: pd.DataFrame, name: str) -> None:
+    df.to_csv(DATA_DIR / f'{name}.csv', index=False)
+
 def drop_rheological(df: pd.DataFrame) -> pd.DataFrame:
     return df.drop(columns=[
         'g_0',
