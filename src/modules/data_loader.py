@@ -1,8 +1,12 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
+
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = PROJECT_DIR / "data"
 
 def load_cleaned() -> pd.DataFrame:
-    return pd.read_csv('data/viscoelastic_cleaned.csv', keep_default_na=False, na_values='')
+    return pd.read_csv(DATA_DIR / 'viscoelastic_cleaned.csv', keep_default_na=False, na_values='')
 
 def drop_rheological(df: pd.DataFrame) -> pd.DataFrame:
     return df.drop(columns=[
@@ -30,7 +34,7 @@ def drop_smiles(df: pd.DataFrame) -> pd.DataFrame:
     ])
 
 def add_expert_chen(df: pd.DataFrame, columns, na=np.nan):
-    expert_chen = pd.read_csv('data/expert_chen.csv', keep_default_na=False, na_values='')
+    expert_chen = pd.read_csv(DATA_DIR / 'expert_chen.csv', keep_default_na=False, na_values='')
     expert_chen.loc[len(expert_chen)] = ['None'].extend(np.ones(18) * na)
     expert_chen = expert_chen.set_index('smiles')
     for column in columns:
@@ -39,7 +43,7 @@ def add_expert_chen(df: pd.DataFrame, columns, na=np.nan):
     return df
 
 def add_physiochemical(df: pd.DataFrame, columns, na=np.nan):
-    physiochemical = pd.read_csv('data/physiochemical.csv', keep_default_na=False, na_values='')
+    physiochemical = pd.read_csv(DATA_DIR / 'physiochemical.csv', keep_default_na=False, na_values='')
     physiochemical.loc[len(physiochemical)] = ['None'].extend(np.ones(256) * na)
     physiochemical = physiochemical.set_index('smiles')
     for column in columns:
