@@ -53,3 +53,30 @@ def add_physiochemical(df: pd.DataFrame, columns, na=np.nan):
         prefix = column.replace('smiles_','')
         df = df.merge(physiochemical.add_prefix(prefix + '_'), left_on=column, right_on='smiles', how='left')
     return df
+
+def add_avalon(df: pd.DataFrame, columns, na=np.nan):
+    physiochemical = pd.read_csv(DATA_DIR / 'avalon.csv', keep_default_na=False, na_values='')
+    physiochemical.loc[len(physiochemical)] = ['None'].extend(np.ones(256) * na)
+    physiochemical = physiochemical.set_index('smiles')
+    for column in columns:
+        prefix = column.replace('smiles_','')
+        df = df.merge(physiochemical.add_prefix(prefix + '_'), left_on=column, right_on='smiles', how='left')
+    return df
+
+def add_maccs(df: pd.DataFrame, columns, na=np.nan):
+    physiochemical = pd.read_csv(DATA_DIR / 'maccs.csv', keep_default_na=False, na_values='')
+    physiochemical.loc[len(physiochemical)] = ['None'].extend(np.ones(166) * na)
+    physiochemical = physiochemical.set_index('smiles')
+    for column in columns:
+        prefix = column.replace('smiles_','')
+        df = df.merge(physiochemical.add_prefix(prefix + '_'), left_on=column, right_on='smiles', how='left')
+    return df
+
+def add_bcut2d(df: pd.DataFrame, columns, na=np.nan):
+    physiochemical = pd.read_csv(DATA_DIR / 'bcut2d.csv', keep_default_na=False, na_values='')
+    physiochemical.loc[len(physiochemical)] = ['None'].extend(np.ones(8) * na)
+    physiochemical = physiochemical.set_index('smiles')
+    for column in columns:
+        prefix = column.replace('smiles_','')
+        df = df.merge(physiochemical.add_prefix(prefix + '_'), left_on=column, right_on='smiles', how='left')
+    return df
