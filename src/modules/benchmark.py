@@ -6,7 +6,7 @@ from sklearn.metrics import roc_curve, auc
 from sklearn.model_selection import StratifiedGroupKFold, cross_val_predict
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.pipeline import Pipeline
-from data_loader import drop_ids, drop_smiles, add_physiochemical, drop_rheological, load_cleaned, add_expert_chen
+from modules.data_loader import drop_ids, drop_smiles, add_physiochemical, drop_rheological, load_cleaned, add_expert_chen
 
 
 def quick_load(feature, columns):
