@@ -6,7 +6,8 @@ from sklearn.metrics import roc_curve, auc
 from sklearn.model_selection import StratifiedGroupKFold, cross_val_predict
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.pipeline import Pipeline
-from modules.data_loader import drop_ids, drop_smiles, add_physiochemical, drop_rheological, load_cleaned, add_expert_chen
+from modules.data_loader import drop_ids, drop_smiles, add_physiochemical, drop_rheological, load_cleaned, \
+    add_expert_chen, add_avalon, add_maccs, add_bcut2d
 
 
 def quick_load(feature, columns):
@@ -16,6 +17,12 @@ def quick_load(feature, columns):
         df = add_expert_chen(df, columns=columns)
     elif feature == 'physiochemical':
         df = add_physiochemical(df, columns=columns)
+    elif feature == 'avalon':
+        df = add_avalon(df, columns=columns)
+    elif feature == 'maccs':
+        df = add_maccs(df, columns=columns)
+    elif feature == 'bcut2d':
+        df = add_bcut2d(df, columns=columns)
     else:
         return None
     df = drop_smiles(df)
