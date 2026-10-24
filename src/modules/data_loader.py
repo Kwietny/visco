@@ -5,8 +5,12 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent.parent.parent
 DATA_DIR = PROJECT_DIR / "data"
 
-def load_cleaned() -> pd.DataFrame:
-    return pd.read_csv(DATA_DIR / 'viscoelastic_cleaned.csv', keep_default_na=False, na_values='')
+def load_cleaned(drop_source = True) -> pd.DataFrame:
+    if drop_source:
+        return drop_source(pd.read_csv(DATA_DIR / 'viscoelastic_cleaned.csv', keep_default_na=False, na_values=''))
+    else:
+        return pd.read_csv(DATA_DIR / 'viscoelastic_cleaned.csv', keep_default_na=False, na_values='')
+
 
 def save_features(df: pd.DataFrame, name: str) -> None:
     df.to_csv(DATA_DIR / f'{name}.csv', index=False)
@@ -34,6 +38,11 @@ def drop_smiles(df: pd.DataFrame) -> pd.DataFrame:
         'smiles_surfactant2',
         'smiles_additive1',
         'smiles_additive2'
+    ])
+
+def drop_source(df: pd.DataFrame) -> pd.DataFrame:
+    return df.drop(columns=[
+        'source'
     ])
 
 def add_expert_chen(df: pd.DataFrame, columns, na=np.nan):
