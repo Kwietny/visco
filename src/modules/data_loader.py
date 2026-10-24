@@ -5,8 +5,8 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent.parent.parent
 DATA_DIR = PROJECT_DIR / "data"
 
-def load_cleaned(drop_source = True) -> pd.DataFrame:
-    if drop_source:
+def load_cleaned(drop = True) -> pd.DataFrame:
+    if drop:
         return drop_source(pd.read_csv(DATA_DIR / 'viscoelastic_cleaned.csv', keep_default_na=False, na_values=''))
     else:
         return pd.read_csv(DATA_DIR / 'viscoelastic_cleaned.csv', keep_default_na=False, na_values='')
