@@ -14,7 +14,8 @@ AUC
 
 
 ## TODO
-- more features
+- explainability analysis for more feature sets
+- check which examples model mislabels most confidently
 - more classifiers(BRR)
 - fine-tuning
 - search for full spectrum plots
