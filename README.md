@@ -18,7 +18,9 @@ AUC
 - check which examples model mislabels most confidently
 - more classifiers - ExtraTrees, CatBoost, SVC, LogRegression, MLP, LDA
 - regression - BRR
-- PCA
+- clustering/medoids - group representatives/hierarchical structure
+- check for low margin predictions and most confident misclassifications
+- active learning?
 - add [MoLFormer](https://github.com/ashansaleha-collab/Surfactants-PUT/blob/main/transformer/README_model.md)
 - fine-tuning
 - search for full spectrum plots
