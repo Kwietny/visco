@@ -24,6 +24,7 @@ AUC
 - add [MoLFormer](https://github.com/ashansaleha-collab/Surfactants-PUT/blob/main/transformer/README_model.md)
 - fine-tuning
 - search for full spectrum plots
+- Random Forest Regressor/Gradient-Boosted Trees/Support Vector Regression/Ridge Regression / Elastic Net/Kernel Ridge Regression
 - check outliers
 
 ### Ideas
