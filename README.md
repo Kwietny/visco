@@ -14,10 +14,17 @@ AUC
 
 
 ## TODO
-- more features
-- more classifiers(BRR)
+- explainability analysis for more feature sets
+- check which examples model mislabels most confidently
+- more classifiers - ExtraTrees, CatBoost, SVC, LogRegression, MLP, LDA
+- regression - BRR
+- clustering/medoids - group representatives/hierarchical structure
+- check for low margin predictions and most confident misclassifications
+- active learning?
+- add [MoLFormer](https://github.com/ashansaleha-collab/Surfactants-PUT/blob/main/transformer/README_model.md)
 - fine-tuning
 - search for full spectrum plots
+- Random Forest Regressor/Gradient-Boosted Trees/Support Vector Regression/Ridge Regression / Elastic Net/Kernel Ridge Regression
 - check outliers
 
 ### Ideas
