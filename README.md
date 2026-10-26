@@ -16,7 +16,8 @@ AUC
 ## TODO
 - explainability analysis for more feature sets
 - check which examples model mislabels most confidently
-- more classifiers(BRR) - ExtraTrees, CatBoost, SVC, LogRegression, MLP, LDA
+- more classifiers - ExtraTrees, CatBoost, SVC, LogRegression, MLP, LDA
+- regression - BRR
 - PCA
 - add [MoLFormer](https://github.com/ashansaleha-collab/Surfactants-PUT/blob/main/transformer/README_model.md)
 - fine-tuning
