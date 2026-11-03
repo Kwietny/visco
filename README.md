@@ -14,7 +14,7 @@ AUC
 
 
 ## TODO
-- explainability analysis for more feature sets
+- solve position invariance - augment dataset + average predictions for swapped and original data
 - check which examples model mislabels most confidently
 - more classifiers - ExtraTrees, CatBoost, SVC, LogRegression, MLP, LDA
 - regression - BRR
