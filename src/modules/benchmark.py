@@ -8,6 +8,7 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.pipeline import Pipeline
 from modules.data_loader import drop_ids, drop_smiles, add_physiochemical, drop_rheological, load_cleaned, \
     add_expert_chen, add_avalon, add_maccs, add_bcut2d
+from modules.data_augmentation import augemnted_groupping, augment
 
 
 def quick_load(feature, columns):
@@ -32,7 +33,7 @@ def xy_split(df):
     y = df['viscoelasticity']
     X = df.drop(columns=['viscoelasticity'])
     X = drop_ids(X)
-    groups = df[['id_surfactant1', 'id_surfactant2', 'id_additive1', 'id_additive2']].fillna('NONE').apply(tuple, axis=1)
+    groups = df[['id_surfactant1', 'id_surfactant2', 'id_additive1', 'id_additive2']].fillna('NONE').apply(augemnted_groupping, axis=1)
     return X, y, groups
 
 def simple_test(classifier, X, y, groups, plot=True):
